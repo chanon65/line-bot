@@ -15,7 +15,7 @@ $arrPostData['to'] = "U961224e379af4062d4ce99f7e9c46dfe";
 $arrPostData['messages'][0]['type'] = "text";
 $arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
 
-if ($arrJson['events'][0]['message']['text'] <> ""){
+if ($arrJson['events'][0]['message']['text'] <> "" || $arrJson['events'][0]['packageId']['stickerId'] <> ""){
 	$strUrl = "https://api.line.me/v2/bot/message/reply";
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 		$arrPostData = array();
