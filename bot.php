@@ -41,6 +41,7 @@ $arrPushData['messages'][0]['text'] = "นี้คือการทดสอ�
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
+curl_setopt($ch, CURLOPT_URL,$strUrlpush);
 curl_setopt($ch, CURLOPT_HEADER, false);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
@@ -51,5 +52,6 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
 
+$ch = curl_init();
 
 ?>
