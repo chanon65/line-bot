@@ -26,16 +26,15 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
-}else if($arrJson['events'][0]['message']['text'] == "เย็นนี้ทำอะไรดี"){
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ตีหรีกันไหม";
 }else{
   $arrPostData = array();
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 }
+
+$arrPostData = array();
+$arrPostData['messages'][0]['user'] = "text";
+$arrPostData['messages'][0]['text'] = "U961224e379af4062d4ce99f7e9c46dfe";
  
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
