@@ -17,8 +17,7 @@ echo $result;
 
 
 
-$_SESSION["favcolor"] = '0';
+echo $_SESSION["favcolor"];
 
-echo $_SESSION["favcolor"] + 1;
-
+$_SESSION["favcolor"]++;
 
