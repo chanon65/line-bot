@@ -37,9 +37,11 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 }
- echo $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
- echo $arrPostData['messages'][0]['type'] = "text";
- echo $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
+
+
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
  
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
