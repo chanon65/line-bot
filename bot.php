@@ -5,7 +5,7 @@ $strAccessToken = "2ObLFJCXF9ogLsCfrACIF3l98zCjCNWklcpA7Ic4C+nbM0qHi5fFxEoqQAxP6
 $content = file_get_contents('php://input');
 $arrJson = json_decode($content, true);
 
-$strUrl = "https://api.line.me/v2/bot/message/push";
+$strUrl = "https://api.line.me/v2/bot/message/reply";
  
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
@@ -27,8 +27,12 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
+}else{
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 }
-
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
