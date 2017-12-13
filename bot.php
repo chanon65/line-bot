@@ -1,4 +1,5 @@
 <?php
+include('bot2.php');
 $strAccessToken = "2ObLFJCXF9ogLsCfrACIF3l98zCjCNWklcpA7Ic4C+nbM0qHi5fFxEoqQAxP6vUSRVm/4U5ShxjmjyR97THBsWz2fIU8RPTBuyxGk0IAfeW1eMgZ1a0H0rfYWQ5//k+tSIwOYvdKVkp8UkmsKKSDMQdB04t89/1O/w1cDnyilFU=";
  
 $content = file_get_contents('php://input');
@@ -9,11 +10,6 @@ $strUrl = "https://api.line.me/v2/bot/message/push";
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
-
-$arrPostData = array();
-$arrPostData['to'] = "U961224e379af4062d4ce99f7e9c46dfe";
-$arrPostData['messages'][0]['type'] = "text";
-$arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Alarm";
  
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $strUrl = "https://api.line.me/v2/bot/message/reply";
