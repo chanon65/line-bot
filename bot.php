@@ -10,6 +10,12 @@ $strUrl = "https://api.line.me/v2/bot/message/reply";
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
+
+
+$arrPostData = array();
+$arrPostData['to'] = "U961224e379af4062d4ce99f7e9c46dfe";
+$arrPostData['messages'][0]['type'] = "text";
+$arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Alarm";
  
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
@@ -33,10 +39,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 }
 
-$arrPostData = array();
-$arrPostData['to'] = "U961224e379af4062d4ce99f7e9c46dfe";
-$arrPostData['messages'][0]['type'] = "text";
-$arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Alarm";
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
