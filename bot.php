@@ -10,7 +10,7 @@ $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
-$stickerId = '34';
+$stickerId = 34;
 
 $arrPostData = array();
 $arrPostData['to'] = "U961224e379af4062d4ce99f7e9c46dfe";
