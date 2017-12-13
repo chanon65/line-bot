@@ -52,7 +52,7 @@ curl_close ($ch);
 
 $ch1 = curl_init();
 curl_setopt($ch1, CURLOPT_URL,$strUrlpush);
-curl_setopt($ch1, CURLOPT_HEADER, false);
+//curl_setopt($ch1, CURLOPT_HEADER, false);
 curl_setopt($ch1, CURLOPT_POST, true);
 curl_setopt($ch1, CURLOPT_HTTPHEADER, $arrHeader);
 curl_setopt($ch1, CURLOPT_POSTFIELDS, json_encode($arrPushData));
