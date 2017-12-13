@@ -58,7 +58,5 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrPushData));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-$result = curl_exec($ch);
-curl_close ($ch);
  
 ?>
