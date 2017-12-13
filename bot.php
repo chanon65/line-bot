@@ -15,13 +15,13 @@ $arrPostData['to'] = "U961224e379af4062d4ce99f7e9c46dfe";
 $arrPostData['messages'][0]['type'] = "text";
 $arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
 	
-if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
+	if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 		$strUrl = "https://api.line.me/v2/bot/message/reply";
 		$arrPostData = array();
 		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
 		$arrPostData['messages'][0]['type'] = "text";
 		$arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
-}else if($arrJson['events'][0]['message']['text'] == "ชื่ออะไร"){
+	} else if($arrJson['events'][0]['message']['text'] == "ชื่ออะไร"){
 		$strUrl = "https://api.line.me/v2/bot/message/reply";
 		$arrPostData = array();
 		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -33,7 +33,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
 		$arrPostData['messages'][0]['type'] = "text";
 		$arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
-	} elseif if ($arrJson['events'][0]['message']['text'] <> ""){
+	} elseif($arrJson['events'][0]['message']['text'] <> ""){
 		$strUrl = "https://api.line.me/v2/bot/message/reply";
 		$arrPostData = array();
 		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
