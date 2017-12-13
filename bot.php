@@ -32,7 +32,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
 		$arrPostData['messages'][0]['type'] = "text";
 		$arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
-	} elseif($arrJson['events'][0]['message']['text'] > "0"){
+	} elseif($arrJson['events'][0]['message']['packageId'] > "0"){
 		$arrPostData = array();
 		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
 		$arrPostData['messages'][0]['type'] = "text";
