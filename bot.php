@@ -33,12 +33,12 @@ $arrPostData['messages'][0]['text'] = "นี้คือการทดสอ�
 		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
 		$arrPostData['messages'][0]['type'] = "text";
 		$arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
-	} elseif($arrJson['events'][0]['message']['text'] <> ""){
-		$strUrl = "https://api.line.me/v2/bot/message/reply";
-		$arrPostData = array();
-		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-		$arrPostData['messages'][0]['type'] = "text";
-		$arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
+//	} elseif($arrJson['events'][0]['message']['text'] <> ""){
+//		$strUrl = "https://api.line.me/v2/bot/message/reply";
+//		$arrPostData = array();
+//		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+//		$arrPostData['messages'][0]['type'] = "text";
+//		$arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 	} else {
 		$strUrl = "https://api.line.me/v2/bot/message/reply";
 		$arrPostData = array();
