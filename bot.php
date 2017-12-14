@@ -1,18 +1,15 @@
 <?php
 $strAccessToken = "2ObLFJCXF9ogLsCfrACIF3l98zCjCNWklcpA7Ic4C+nbM0qHi5fFxEoqQAxP6vUSRVm/4U5ShxjmjyR97THBsWz2fIU8RPTBuyxGk0IAfeW1eMgZ1a0H0rfYWQ5//k+tSIwOYvdKVkp8UkmsKKSDMQdB04t89/1O/w1cDnyilFU=";
 
-
-
 $content = file_get_contents('php://input');
 $arrJson = json_decode($content, true);
  
 //$strUrl = "https://api.line.me/v2/bot/message/reply";
-$strUrl = "https://api.line.me/v2/bot/message/push";
+//$strUrl = "https://api.line.me/v2/bot/message/push";
  
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
-
 
 if($arrJson['events'][0]['message']['text'] == ""){
 $strUrl = "https://api.line.me/v2/bot/message/reply";
@@ -45,11 +42,6 @@ $strUrl = "https://api.line.me/v2/bot/message/reply";
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 }
-
-$arrPostData = array();
-$arrPostData['to'] = "USER_ID";
-$arrPostData['messages'][0]['type'] = "text";
-$arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
