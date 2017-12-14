@@ -15,41 +15,38 @@ $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
 
 if($arrJson['events'][0]['message']['text'] == ""){
-
-if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
-$strUrl = "https://api.line.me/v2/bot/message/reply";
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
-}else if($arrJson['events'][0]['message']['text'] == "ชื่ออะไร"){
-$strUrl = "https://api.line.me/v2/bot/message/reply";
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ฉันยังไม่มีชื่อนะ";
-}else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
-$strUrl = "https://api.line.me/v2/bot/message/reply";
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
-}else{
-$strUrl = "https://api.line.me/v2/bot/message/reply";
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
+	if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
+		$strUrl = "https://api.line.me/v2/bot/message/reply";
+		$arrPostData = array();
+		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+		$arrPostData['messages'][0]['type'] = "text";
+		$arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
+	}else if($arrJson['events'][0]['message']['text'] == "ชื่ออะไร"){
+		$strUrl = "https://api.line.me/v2/bot/message/reply";
+		$arrPostData = array();
+		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+		$arrPostData['messages'][0]['type'] = "text";
+		$arrPostData['messages'][0]['text'] = "ฉันยังไม่มีชื่อนะ";
+	}else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
+		$strUrl = "https://api.line.me/v2/bot/message/reply";
+	    $arrPostData = array();
+		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+		$arrPostData['messages'][0]['type'] = "text";
+		$arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
+	}else{
+		$strUrl = "https://api.line.me/v2/bot/message/reply";
+		$arrPostData = array();
+		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+		$arrPostData['messages'][0]['type'] = "text";
+		$arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 	}
-} else 
+} else {
 
-$strUrl = "https://api.line.me/v2/bot/message/push";
 
-$arrPostData = array();
-$arrPostData['to'] = "U961224e379af4062d4ce99f7e9c46dfe";
-$arrPostData['messages'][0]['type'] = "text";
-$arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
- 
+
+
+
+
 }
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
