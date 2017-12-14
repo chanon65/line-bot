@@ -39,8 +39,7 @@ if($arrJson['events'][0]['message']['text'] <> "" || $arrJson['events'][0]['mess
 		$arrPostData['messages'][0]['type'] = "text";
 		$arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 	}
-} 
-
+} else {
 	$arrPostData = array();
 	$arrPostData['to'] = "U961224e379af4062d4ce99f7e9c46dfe";
 	$arrPostData['messages'][0]['type'] = "text";
