@@ -37,20 +37,13 @@ $arrPostData['messages'][0]['text'] = "นี้คือการทดสอ�
 
 }
 
-if ($arrJson['events'][0]['message']['text'] == ""){
-		$strUrl = "https://api.line.me/v2/bot/message/reply";
-		$arrPostData = array();
-		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-		$arrPostData['messages'][0]['type'] = "text";
-		$arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
-} else {
-
-$arrPostData = array();
-$arrPostData['to'] = "U961224e379af4062d4ce99f7e9c46dfe";
-$arrPostData['messages'][0]['type'] = "text";
-$arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
-
-}
+//if ($arrJson['events'][0]['message']['text'] == ""){
+//		$strUrl = "https://api.line.me/v2/bot/message/reply";
+//		$arrPostData = array();
+//		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+//		$arrPostData['messages'][0]['type'] = "text";
+//		$arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
+//}
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
