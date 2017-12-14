@@ -38,14 +38,7 @@ if($arrJson['events'][0]['message']['text'] == ""){
 		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
 		$arrPostData['messages'][0]['type'] = "text";
 		$arrPostData['messages'][0]['text'] = "รูปภาพหรือสติกเกอร์";
-} else {
-		$strUrl = "https://api.line.me/v2/bot/message/reply";
-		$arrPostData = array();
-		$arrPostData['to'] = "U961224e379af4062d4ce99f7e9c46dfe";
-		$arrPostData['messages'][0]['type'] = "text";
-		$arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
-}
-
+} 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
 curl_setopt($ch, CURLOPT_HEADER, false);
