@@ -39,7 +39,7 @@ if ($arrJson['events'][0]['message']['text'] <> ""){
 	}
 } 
 
-if ($arrJson['events'][0]['message']['sticker'] <> ""){
+if ($arrJson['events'][0]['sticker']['text'] <> ""){
 		$strUrl = "https://api.line.me/v2/bot/message/reply";
 		$arrPostData = array();
 		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
