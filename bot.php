@@ -28,11 +28,6 @@ if($arrJson['events'][0]['message']['text'] <> ""){
 		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
 		$arrPostData['messages'][0]['type'] = "text";
 		$arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
-	} elseif($arrJson['events'][0]['message']['text'] == ""){
-		$arrPostData = array();
-		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-		$arrPostData['messages'][0]['type'] = "text";
-		$arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 	} else {
 		$arrPostData = array();
 		$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -46,6 +41,13 @@ if($arrJson['events'][0]['message']['text'] <> ""){
 	$arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
 }
 
+if($arrJson['events'][0]['message']['text'] == ""){
+	$strUrl = "https://api.line.me/v2/bot/message/reply";
+	$arrPostData = array();
+	$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+	$arrPostData['messages'][0]['type'] = "text";
+	$arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
+}
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
 curl_setopt($ch, CURLOPT_HEADER, false);
