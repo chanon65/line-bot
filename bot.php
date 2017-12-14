@@ -5,18 +5,23 @@ $content = file_get_contents('php://input');
 $arrJson = json_decode($content, true);
  
 //$strUrl = "https://api.line.me/v2/bot/message/reply";
-//$strUrl = "https://api.line.me/v2/bot/message/push";
+$strUrl = "https://api.line.me/v2/bot/message/push";
  
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
+
+$arrPostData = array();
+$arrPostData['to'] = "U961224e379af4062d4ce99f7e9c46dfe";
+$arrPostData['messages'][0]['type'] = "text";
+$arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
 
 if($arrJson['events'][0]['message']['text'] == ""){
 $strUrl = "https://api.line.me/v2/bot/message/reply";
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "อย่าสนรูปและสติกเกอร์";
+  $arrPostData['messages'][0]['text'] = "อย่าโพสรูปและสติกเกอร์";
 }else if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 $strUrl = "https://api.line.me/v2/bot/message/reply";
   $arrPostData = array();
