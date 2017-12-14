@@ -11,7 +11,7 @@ $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
-if($arrJson['events'][0]['message']['text'] <> ""){
+if($arrJson['events'][0]['message']['text'] <> "" || $arrJson['events'][0]['message']['text'] == ""){
   $strUrl = "https://api.line.me/v2/bot/message/reply";
  	if($arrJson['events'][0]['message']['text'] == ""){
 		$arrPostData = array();
