@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php
-	$objConnect = mssql_connect("localhost","sa","sapwd");
+	$objConnect = mssql_connect("DESKTOP-OGFRGSA\SQLEXPRESS","sa","sapwd");
 	if($objConnect)
 	{
 		echo "Database Connected.";
