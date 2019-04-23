@@ -1,5 +1,5 @@
 <?php
- 
+echo "Am Bot";
 $strAccessToken = "GnPzBPwm3hH+KxN0v7tpSIyjKzzfHCt+6ldwUjMDyemm0zC8Z3U5smx99kWJxxjNRZSVG2NuLGS9sPYk2KWFW7nCG8jn4uDY+p3vi93K0VaK6EqCOlEe6G+L4uOuYUmXMxIwJTh7nOf3MmJ2IF9gVQdB04t89/1O/w1cDnyilFU=
 ";
  
